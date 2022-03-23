@@ -1,3 +1,4 @@
 import { FullscreenLayout } from "./FullscreenLayout";
+import { Layout } from "./Layout";
 
-export { FullscreenLayout };
+export { FullscreenLayout, Layout };
