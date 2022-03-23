@@ -1,3 +1,12 @@
+import { useDispatch } from "react-redux";
+import { logout } from "../store/actions/login";
+
 export const Home = () => {
-  return <div>home</div>;
+  const dispatch = useDispatch();
+
+  return (
+    <div>
+      home <button onClick={() => dispatch(logout())}>logout</button>
+    </div>
+  );
 };

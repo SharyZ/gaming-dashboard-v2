@@ -4,6 +4,8 @@ import { ToastContainer } from "react-toastify";
 import { Home, Login, Notfound, Signup } from "./pages";
 import Root from "./Root";
 
+import RequireAuth from "./utils/RequireAuth";
+
 function App() {
   return (
     <Root>
@@ -11,7 +13,15 @@ function App() {
       <Switch>
         <Route path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
-        <Route exact path="/" component={Home} />
+        <Route
+          exact
+          path="/"
+          component={() => (
+            <RequireAuth>
+              <Home />
+            </RequireAuth>
+          )}
+        />
         <Route path="*" component={Notfound} />
       </Switch>
     </Root>
