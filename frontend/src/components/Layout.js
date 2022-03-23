@@ -1,3 +1,4 @@
+import { TheHeader } from "./TheHeader";
 import { TheLeftSidebar } from "./TheLeftSidebar";
 
 export const Layout = ({ children }) => {
@@ -5,6 +6,7 @@ export const Layout = ({ children }) => {
     <>
       <TheLeftSidebar />
       <main className="container mx-auto flex-1 rounded-[40px] bg-[#fafafa] p-[40px] dark:bg-[#20232a]">
+        <TheHeader />
         {children}
       </main>
     </>

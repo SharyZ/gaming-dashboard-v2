@@ -1,9 +1,11 @@
-import { Layout } from "../components";
+import { Banner, Layout, PopularGames, ReleasedGames } from "../components";
 
 export const Home = () => {
   return (
     <Layout>
-      <h1>Home</h1>
+      <Banner />
+      <PopularGames />
+      <ReleasedGames />
     </Layout>
   );
 };
