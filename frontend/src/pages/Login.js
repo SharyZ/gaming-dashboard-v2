@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { FullscreenLayout } from "../components";
+import { login } from "../store/actions/login";
 
 export const Login = () => {
+  const dispatch = useDispatch();
   const [loginFormData, setLoginFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -17,7 +20,7 @@ export const Login = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("Login", loginFormData);
+    dispatch(login(loginFormData, "/"));
   };
 
   return (
@@ -33,12 +36,12 @@ export const Login = () => {
           onSubmit={handleFormSubmit}
         >
           <div>
-            <label htmlFor="email">E-mail</label>
+            <label htmlFor="username">Username</label>
             <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="johndoe@example.com"
+              type="text"
+              name="username"
+              id="username"
+              placeholder="johndoe"
               required
               onChange={handleInputChange}
             />

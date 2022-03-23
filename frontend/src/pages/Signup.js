@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { FullscreenLayout } from "../components";
+import { signupNewUser } from "../store/actions/signup";
 
 export const Signup = () => {
+  const dispatch = useDispatch();
   const [signupFormData, setSignupFormData] = useState({
     username: "",
     email: "",
@@ -19,7 +22,7 @@ export const Signup = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("Signup", signupFormData);
+    dispatch(signupNewUser(signupFormData));
   };
 
   return (
