@@ -20,7 +20,7 @@ export const Login = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    dispatch(login(loginFormData, "/"));
+    dispatch(login(loginFormData, "/home"));
   };
 
   return (

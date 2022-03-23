@@ -71,7 +71,7 @@ export const logout = () => (dispatch) => {
   logoutUser()
     .then((response) => {
       dispatch(unsetCurrentUser());
-      dispatch(push("/"));
+      dispatch(push("/home"));
       toast.success("Logout successful.");
     })
     .catch((error) => {
