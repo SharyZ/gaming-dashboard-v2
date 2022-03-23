@@ -10,4 +10,4 @@ from apps.games.serializers import GameSerializer
 class GameViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = GameSerializer
     permission_classes = [IsAuthenticated]
-    queryset = Game.objects.all()
+    queryset = Game.objects.order_by('-created_at')

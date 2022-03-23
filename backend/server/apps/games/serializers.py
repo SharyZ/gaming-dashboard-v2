@@ -4,6 +4,8 @@ from apps.games.models import Game
 
 
 class GameSerializer(serializers.ModelSerializer):
+    category_name = serializers.CharField(source='category.name')
+
     class Meta:
         model = Game
         fields = (
@@ -13,6 +15,7 @@ class GameSerializer(serializers.ModelSerializer):
             "cover_big",
             "title",
             "category",
+            "category_name",
             "description",
             "created_at",
         )
