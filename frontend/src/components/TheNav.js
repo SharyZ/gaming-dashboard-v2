@@ -15,19 +15,19 @@ const navItems = [
   },
   {
     icon: <ViewGridAddIcon className="h-6 w-6" />,
-    link: "games",
+    link: "/games",
   },
   {
     icon: <ChatIcon className="h-6 w-6" />,
-    link: "chat",
+    link: "/chat",
   },
   {
     icon: <StarIcon className="h-6 w-6" />,
-    link: "favorites",
+    link: "/favorites",
   },
   {
     icon: <CogIcon className="h-6 w-6" />,
-    link: "settings",
+    link: "/settings",
   },
 ];
 
