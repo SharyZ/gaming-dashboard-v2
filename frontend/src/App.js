@@ -1,7 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
-import { Home, Login, Notfound, Signup } from "./pages";
+import { Games, GamesDetail, Home, Login, Notfound, Signup } from "./pages";
 import Root from "./Root";
 
 import RequireAuth from "./utils/RequireAuth";
@@ -15,10 +15,28 @@ function App() {
         <Route path="/login" component={Login} />
         <Route
           exact
-          path="/"
+          path="/home"
           component={() => (
             <RequireAuth>
               <Home />
+            </RequireAuth>
+          )}
+        />
+        <Route
+          exact
+          path="/games"
+          component={() => (
+            <RequireAuth>
+              <Games />
+            </RequireAuth>
+          )}
+        />
+        <Route
+          exact
+          path="/games/:gameId"
+          component={() => (
+            <RequireAuth>
+              <GamesDetail />
             </RequireAuth>
           )}
         />
